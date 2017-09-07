@@ -31,9 +31,11 @@ app.use((req, res, next) => {
 // This middleware is a maintenance tag. If you want to take the entire site
 // offline for maintenance, uncomment this block. Because it never calls next,
 // nothing else after it will get called.
-app.use((req, res, next) => {
-  res.render('maintenance');
-});
+// ------------------------------------------
+// app.use((req, res, next) => {
+//   res.render('maintenance');
+// });
+// ------------------------------------------
 // We had to move this after our maintenance or else anything in the public dir would
 // still be available even in maintenance mode.
 app.use(express.static(__dirname + '/public'));   // __dirname is part of the wrapper
