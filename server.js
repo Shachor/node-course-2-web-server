@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// Sets the port to Heroku PORT or port 3000 if Heroku doesn't exist
+const port = process.env.PORT || 3000;
+
 
 var app = express();
 
@@ -76,9 +79,20 @@ app.get('/bad', (req, res) => {
 
 
 // app.listen(3000);
-app.listen(3000, () => {
-  console.log('Server is up on Port 3000');
+
+// This is the static listen used when you're running locally
+// app.listen(3000, () => {
+//   console.log('Server is up on Port 3000');
+// });
+
+// This is the listen daemon for Heroku deployment
+app.listen(port, () => {
+  console.log(`Server is up on Port ${port}`);
 });
+
+
+
+
 
 
 // This command to start the server will watch for changes to js and hbs files
