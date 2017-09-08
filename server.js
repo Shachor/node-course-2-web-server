@@ -77,6 +77,12 @@ app.get('/bad', (req, res) => {
   });
 })
 
+app.get('/projects', (req, res) => {
+  res.render('projects', {
+    title: 'GitHub Projects',
+    pageTitle: 'GitHub Project Page'
+  });
+});
 
 
 

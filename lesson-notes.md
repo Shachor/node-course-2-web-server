@@ -33,3 +33,10 @@
     to setup either the Heroku PORT or port 3000 locally.
 
 * Add the start script to package.json. "start": "node server.js"
+
+* Once you're done you can create the heroku app.
+    heroku.cmd create
+
+    git push heroku     This will upload your site to Heroku
+
+    heroku.cmd open     Opens a browser directly into your site's URL
